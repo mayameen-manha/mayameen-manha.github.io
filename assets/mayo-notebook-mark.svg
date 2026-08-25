@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Mayo's open notebook mark</title>
+  <desc id="desc">An open notebook with a pencil-star fold</desc>
+  <g fill="none" stroke="#32645f" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 38c24-13 46-12 60 1v92c-17-12-39-13-60-2V38Z" fill="#d9e8e0" stroke-width="6"/>
+    <path d="M140 38c-24-13-46-12-60 1v92c17-12 39-13 60-2V38Z" fill="#f3d9d3" stroke-width="6"/>
+    <path d="M80 39v92" stroke-width="5"/>
+    <path d="M35 55c14-6 28-6 39 0M35 73c14-6 28-6 39 0M35 91c14-6 28-6 39 0M125 55c-14-6-28-6-39 0M125 73c-14-6-28-6-39 0M125 91c-14-6-28-6-39 0" stroke-width="3" opacity=".55"/>
+    <path d="m104 18 9 18 19 3-14 13 3 19-17-9-17 9 3-19-14-13 19-3 9-18Z" fill="#d5a84e" stroke="#32645f" stroke-width="5"/>
+    <path d="m101 55 18 18" stroke="#fffdf9" stroke-width="5"/>
+  </g>
+</svg>
