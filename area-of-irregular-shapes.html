@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Style reminder: a calm, paper-first lesson page for Mayo. Use visual explanations before symbols, warm language, pencil-teal structure, and no distracting motion. -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A visual Year 6 lesson for finding the area of irregular shapes by splitting them into rectangles." />
+    <title>Area of Irregular Shapes · Mayo's Maths Notebook</title>
+    <link rel="icon" type="image/png" href="/manus-storage/mayo-notebook-mark_d1982af1.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --paper: #f7f2e9; --white: #fffdf9; --ink: #2d3938; --muted: #6f7974;
+        --teal: #4f827b; --teal-dark: #32645f; --teal-wash: #d9e8e0;
+        --rose: #d98f91; --rose-wash: #f3d9d3; --yellow: #d5a84e; --yellow-wash: #f5e8bb;
+        --sage: #97aa8a; --sage-wash: #dfe8d6; --line: rgba(79,130,123,.15);
+        --ease: cubic-bezier(.23,1,.32,1); --shadow: 0 18px 40px rgba(64,74,66,.1);
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; background: var(--paper); }
+      body { margin: 0; color: var(--ink); background: radial-gradient(circle at 12% 3%, rgba(255,255,255,.7), transparent 22rem), var(--paper); font-family: "DM Sans", sans-serif; line-height: 1.6; }
+      a { color: inherit; text-decoration: none; }
+      button { font: inherit; }
+      a:focus-visible, button:focus-visible { outline: 3px solid rgba(79,130,123,.45); outline-offset: 4px; }
+      .page { max-width: 1220px; margin: 0 auto; padding: 0 34px; }
+      .lesson-header { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: clamp(20px, 4vw, 56px); padding: 20px 0 22px; border-bottom: 1px solid var(--line); }
+      .header-lockup { display: inline-flex; align-items: center; gap: 10px; min-width: max-content; color: var(--teal-dark); }
+      .header-lockup > span:last-child { display: grid; line-height: 1; }
+      .header-lockup strong { font-family: "Fraunces", serif; font-size: 18px; letter-spacing: -.04em; }
+      .header-lockup small { margin-top: 5px; color: var(--muted); font-size: 8px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+      .header-mark { display: grid; width: 45px; height: 45px; place-items: center; border: 1px solid rgba(79,130,123,.2); border-radius: 14px 10px 13px 11px; background: var(--white); box-shadow: 3px 4px 0 rgba(79,130,123,.08); transform: rotate(-4deg); transition: transform .18s var(--ease); }
+      .header-lockup:hover .header-mark { transform: rotate(2deg) translateY(-2px); }
+      .header-mark img { width: 35px; height: 35px; object-fit: contain; }
+      .lesson-brand { justify-self: end; }
+      .back-link { color: var(--teal-dark); font-size: 12px; font-weight: 700; }
+      .back-link span { display: inline-block; margin-right: 8px; font-size: 17px; transition: transform .18s var(--ease); }
+      .back-link:hover span { transform: translateX(-3px); }
+      .lesson-brand { color: var(--muted); font-family: "Fraunces", serif; font-size: 12px; font-style: italic; }
+      .lesson-brand strong { display: inline-grid; width: 25px; height: 25px; margin-left: 7px; place-items: center; border: 1px solid var(--teal); border-radius: 50%; color: var(--teal-dark); font-family: "DM Sans", sans-serif; font-size: 9px; font-style: normal; }
+      .hero { display: grid; grid-template-columns: minmax(0, 1.06fr) minmax(310px, .94fr); gap: clamp(38px, 8vw, 130px); align-items: center; padding: 88px 8% 102px; }
+      .eyebrow { margin: 0 0 15px; color: var(--teal); font-size: 10px; font-weight: 700; letter-spacing: .14em; line-height: 1.2; text-transform: uppercase; }
+      h1, h2, h3 { margin: 0; font-family: "Fraunces", serif; font-weight: 600; letter-spacing: -.055em; line-height: 1.02; }
+      h1 { max-width: 620px; font-size: clamp(53px, 7vw, 88px); }
+      h1 em, h2 em { color: var(--teal); font-style: italic; }
+      .hero-copy > p:last-of-type { max-width: 500px; margin: 25px 0 0; color: var(--muted); font-size: 17px; }
+      .hero-note { position: relative; padding: 26px 27px; border: 1px solid rgba(79,130,123,.16); background: var(--white); box-shadow: 8px 10px 0 rgba(217,143,145,.1), var(--shadow); transform: rotate(2deg); }
+      .hero-note::before { position: absolute; top: -13px; left: 35%; width: 68px; height: 23px; background: rgba(213,168,78,.7); content: ""; transform: rotate(-5deg); }
+      .hero-note p { margin: 0; color: var(--muted); font-family: "Fraunces", serif; font-size: 19px; font-style: italic; }
+      .hero-note strong { display: block; margin-top: 12px; color: var(--teal-dark); font-family: "DM Sans", sans-serif; font-size: 12px; font-style: normal; }
+      .hero-illustration { position: relative; min-height: 235px; margin-top: 31px; border: 1px solid var(--line); background: repeating-linear-gradient(to bottom, transparent 0, transparent 37px, rgba(79,130,123,.13) 38px, transparent 39px), var(--yellow-wash); overflow: hidden; }
+      .hero-illustration::before { position: absolute; top: 31px; left: 12%; width: 67%; height: 135px; border: 2px solid var(--teal); content: ""; transform: rotate(-4deg); }
+      .hero-illustration::after { position: absolute; right: 12%; bottom: 39px; width: 77px; height: 59px; border: 2px solid var(--rose); content: ""; transform: rotate(13deg); }
+      .hero-illustration .split { position: absolute; top: 31px; left: 49%; height: 135px; border-left: 2px dashed var(--rose); transform: rotate(-4deg); }
+      .hero-illustration .label { position: absolute; top: 57px; left: 24%; color: var(--teal-dark); font-family: "Fraunces", serif; font-size: 20px; font-style: italic; transform: rotate(-6deg); }
+      .hero-illustration .label.two { top: 112px; left: 61%; color: #ae6567; }
+      .hero-illustration .pencil { position: absolute; right: 20px; bottom: 18px; width: 75px; border-top: 2px solid var(--yellow); transform: rotate(-12deg); }
+      .lesson-nav { display: flex; flex-wrap: wrap; gap: 9px; margin: 0 8% 75px; padding: 12px; border: 1px solid var(--line); background: rgba(255,253,249,.5); }
+      .lesson-nav a { padding: 8px 12px; border-radius: 4px 7px 5px 6px; color: var(--muted); font-size: 11px; transition: background .18s var(--ease), color .18s var(--ease); }
+      .lesson-nav a:hover { color: var(--teal-dark); background: var(--teal-wash); }
+      .lesson-nav a:first-child { color: var(--teal-dark); background: var(--teal-wash); font-weight: 700; }
+      .section { position: relative; padding: 82px 8%; border-top: 1px solid var(--line); }
+      .annotated-section::after { position: absolute; right: 8%; top: 26px; color: rgba(79,130,123,.6); content: "✎"; font-family: "Fraunces", serif; font-size: 17px; transform: rotate(-12deg); }
+      .section-stamp { position: absolute; top: 24px; left: 8%; color: var(--rose); font-family: "Fraunces", serif; font-size: 12px; font-style: italic; transform: rotate(-4deg); }
+      .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 35px; margin-bottom: 43px; }
+      h2 { font-size: clamp(36px, 4.8vw, 60px); }
+      .section-heading > p { max-width: 340px; margin: 0 0 3px; color: var(--muted); font-size: 14px; }
+      .concept-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+      .concept { min-height: 190px; padding: 22px 19px; border: 1px solid rgba(45,57,56,.09); border-radius: 4px 8px 5px 7px; }
+      .concept:nth-child(1) { background: var(--teal-wash); } .concept:nth-child(2) { background: var(--rose-wash); } .concept:nth-child(3) { background: var(--yellow-wash); } .concept:nth-child(4) { background: var(--sage-wash); }
+      .concept-number { color: var(--teal-dark); font-family: "Fraunces", serif; font-size: 14px; font-style: italic; }
+      .concept h3 { margin: 33px 0 8px; font-size: 24px; }
+      .concept p { margin: 0; color: rgba(45,57,56,.76); font-size: 12px; line-height: 1.5; }
+      .why-grid { display: grid; grid-template-columns: minmax(260px, .75fr) minmax(0, 1.25fr); gap: 58px; align-items: center; }
+      .formula-card { padding: 36px 30px; border: 1px solid rgba(79,130,123,.2); background: var(--teal-wash); box-shadow: 7px 8px 0 rgba(79,130,123,.08); }
+      .formula-card .big-formula { margin: 20px 0 18px; color: var(--teal-dark); font-family: "Fraunces", serif; font-size: clamp(28px, 4vw, 45px); font-style: italic; letter-spacing: -.04em; }
+      .formula-card p:last-child { margin: 0; color: var(--muted); font-size: 13px; }
+      .story-copy h3 { margin-bottom: 18px; font-size: 31px; }
+      .story-copy p { max-width: 540px; margin: 0 0 15px; color: var(--muted); font-size: 15px; }
+      .story-copy p strong { color: var(--teal-dark); }
+      .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; counter-reset: lesson-step; }
+      .step { position: relative; padding: 27px 24px 26px; border-top: 2px solid var(--teal); }
+      .step:not(:last-child)::after { position: absolute; top: 14px; right: -7px; color: var(--rose); content: "→"; font-size: 18px; }
+      .step-number { display: grid; width: 34px; height: 34px; margin-bottom: 23px; place-items: center; border: 1px solid var(--teal); border-radius: 50%; color: var(--teal-dark); font-family: "Fraunces", serif; font-size: 15px; }
+      .step h3 { margin-bottom: 10px; font-size: 24px; }
+      .step p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+      .worked { background: repeating-linear-gradient(to bottom, transparent 0, transparent 45px, rgba(79,130,123,.1) 46px, transparent 47px); }
+      .worked-grid { display: grid; grid-template-columns: minmax(260px, .86fr) minmax(0, 1.14fr); gap: 55px; align-items: center; }
+      .shape-board { padding: 22px; border: 1px solid rgba(79,130,123,.14); background: rgba(255,253,249,.72); box-shadow: var(--shadow); }
+      .shape-board svg { display: block; width: 100%; height: auto; }
+      .shape-board figcaption { margin-top: 12px; color: var(--muted); font-family: "Fraunces", serif; font-size: 12px; font-style: italic; }
+      .calculation { display: grid; gap: 19px; }
+      .calc-line { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; padding-bottom: 15px; border-bottom: 1px solid var(--line); }
+      .calc-badge { display: grid; width: 29px; height: 29px; place-items: center; border-radius: 50%; color: var(--white); background: var(--teal); font-family: "Fraunces", serif; font-size: 14px; }
+      .calc-line:nth-child(2) .calc-badge { background: var(--rose); }
+      .calc-label { color: var(--muted); font-size: 12px; }
+      .calc-math { color: var(--teal-dark); font-family: "Fraunces", serif; font-size: 21px; }
+      .calc-total { margin-top: 2px; padding: 19px 20px; border-left: 3px solid var(--yellow); background: rgba(245,232,187,.58); }
+      .calc-total span { display: block; color: var(--muted); font-size: 11px; }
+      .calc-total strong { display: block; margin-top: 4px; color: var(--teal-dark); font-family: "Fraunces", serif; font-size: 31px; }
+      .split-choice { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; margin-top: 22px; }
+      .split-choice > div { padding: 17px; border: 1px solid var(--line); background: rgba(255,253,249,.6); }
+      .split-choice strong { display: block; margin-bottom: 6px; color: var(--teal-dark); font-size: 12px; }
+      .split-choice p { margin: 0; color: var(--muted); font-size: 11px; }
+      .units-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(230px, .9fr); gap: 55px; align-items: start; }
+      .unit-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+      .unit-table th, .unit-table td { padding: 13px 15px; border-bottom: 1px solid var(--line); text-align: left; }
+      .unit-table th { color: var(--teal-dark); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+      .unit-table td:last-child { color: var(--muted); }
+      .check-card { padding: 26px; border: 1px solid rgba(217,143,145,.35); background: var(--rose-wash); transform: rotate(1.4deg); }
+      .check-card h3 { margin-bottom: 12px; font-size: 28px; }
+      .check-card p { margin: 0; color: rgba(45,57,56,.76); font-size: 13px; }
+      .check-card .tick { margin-top: 17px; color: #a76164; font-family: "Fraunces", serif; font-size: 12px; font-style: italic; }
+      .practice { padding-bottom: 98px; }
+      .practice-intro { max-width: 500px; margin: -19px 0 31px; color: var(--muted); font-size: 14px; }
+      .practice-list { display: grid; gap: 13px; max-width: 850px; }
+      .practice-item { border: 1px solid var(--line); background: rgba(255,253,249,.67); }
+      .practice-question { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 19px 21px; }
+      .practice-question p { margin: 0; color: var(--ink); font-family: "Fraunces", serif; font-size: 20px; }
+      .reveal-button { flex: 0 0 auto; padding: 8px 12px; border: 1px solid rgba(79,130,123,.3); border-radius: 3px 6px 4px 5px; color: var(--teal-dark); background: var(--teal-wash); cursor: pointer; font-size: 11px; font-weight: 700; transition: transform .16s var(--ease), background .16s var(--ease); }
+      .reveal-button:hover { background: #c9dfd4; transform: translateY(-2px); }
+      .answer { display: none; padding: 0 21px 20px; color: var(--muted); font-size: 13px; }
+      .answer.is-open { display: block; }
+      .answer strong { color: var(--teal-dark); }
+      .reflection { display: grid; grid-template-columns: 1.2fr .8fr; gap: 30px; align-items: center; margin-top: 72px; padding: 37px 40px; border: 1px solid rgba(151,170,138,.3); background: var(--sage-wash); }
+      .reflection h2 { font-size: clamp(32px, 4vw, 51px); }
+      .reflection p { max-width: 400px; margin: 15px 0 0; color: var(--muted); font-size: 14px; }
+      .reflection-note { justify-self: end; max-width: 230px; color: var(--teal-dark); font-family: "Fraunces", serif; font-size: 18px; font-style: italic; line-height: 1.2; text-align: center; transform: rotate(-5deg); }
+      .reflection-note span { display: block; margin-bottom: 8px; color: var(--rose); font-family: "DM Sans", sans-serif; font-size: 24px; font-style: normal; }
+      footer { display: flex; justify-content: space-between; gap: 20px; padding: 22px 8% 35px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; }
+      @media (max-width: 900px) { .hero, .why-grid, .worked-grid, .units-grid { grid-template-columns: 1fr; } .hero { padding-top: 65px; } .hero-note { max-width: 580px; justify-self: center; } .concept-grid { grid-template-columns: repeat(2, 1fr); } .steps { grid-template-columns: repeat(2, 1fr); gap: 20px; } .step { border-top-width: 1px; } .step:not(:last-child)::after { display: none; } }
+      @media (max-width: 620px) { .page { padding: 0 20px; } .lesson-header { grid-template-columns: auto 1fr; padding-top: 15px; } .lesson-brand { display: none; } .back-link { justify-self: end; } .header-lockup strong { font-size: 16px; } .header-mark { width: 39px; height: 39px; } .header-mark img { width: 30px; height: 30px; } .hero, .section { padding-right: 0; padding-left: 0; } .section-stamp { left: 0; font-size: 11px; } .annotated-section::after { right: 0; } .hero { padding-top: 55px; padding-bottom: 72px; } h1 { font-size: 54px; } .lesson-nav { margin-right: 0; margin-left: 0; } .section-heading { display: block; } .section-heading > p { margin-top: 17px; } .concept-grid, .steps { grid-template-columns: 1fr; } .concept { min-height: 150px; } .concept h3 { margin-top: 22px; } .shape-board { padding: 12px; } .calc-line { grid-template-columns: 29px 1fr; } .calc-math { grid-column: 2; } .split-choice, .reflection { grid-template-columns: 1fr; } .reflection { padding: 28px 24px; } .reflection-note { justify-self: start; } .practice-question { align-items: flex-start; flex-direction: column; } footer { display: grid; padding-right: 0; padding-left: 0; } }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="lesson-header">
+        <div class="header-lockup"><span class="header-mark"><img src="/manus-storage/mayo-notebook-mark_d1982af1.png" alt="" /></span><span><strong>Mayo's</strong><small>maths notebook</small></span></div>
+        <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Back to the notebook</a>
+        <div class="lesson-brand">Maths · learning page <strong>01</strong></div>
+      </header>
+
+      <main>
+        <section class="hero" id="start">
+          <div class="hero-copy">
+            <p class="eyebrow">Year 6 · Measurement & geometry</p>
+            <h1>Turn a tricky outline into <em>friendly</em> rectangles.</h1>
+            <p>Finding the area of an irregular shape is not a brand-new mystery. It is a familiar rectangle idea, used a few times and then carefully joined together.</p>
+          </div>
+          <div class="hero-note">
+            <p>“We do not need to solve the whole shape in one giant leap.”</p>
+            <strong>Our plan: split it · find each area · add the pieces</strong>
+            <div class="hero-illustration" aria-hidden="true"><span class="split"></span><span class="label">1</span><span class="label two">2</span><span class="pencil"></span></div>
+          </div>
+        </section>
+
+        <nav class="lesson-nav" aria-label="Lesson sections">
+          <a href="#map">The big picture</a><a href="#why">Why it works</a><a href="#worked">See it step by step</a><a href="#units">Units</a><a href="#practice">Your turn</a>
+        </nav>
+
+        <section class="section annotated-section" id="map">
+          <span class="section-stamp">look for the rectangles</span>
+          <div class="section-heading"><div><p class="eyebrow">First, see the map</p><h2>What are we really learning?</h2></div><p>Once the idea is clear, many different-looking problems begin to feel like the same kind of puzzle.</p></div>
+          <div class="concept-grid">
+            <article class="concept"><span class="concept-number">01</span><h3>Area</h3><p>The amount of flat space inside a shape — like how much carpet covers a floor.</p></article>
+            <article class="concept"><span class="concept-number">02</span><h3>Rectangles</h3><p>A rectangle is our reliable building block: length multiplied by width.</p></article>
+            <article class="concept"><span class="concept-number">03</span><h3>Partition</h3><p>Partition means split a bigger shape into smaller parts that are easier to see.</p></article>
+            <article class="concept"><span class="concept-number">04</span><h3>Combine</h3><p>Find the area of each part, then add them so no piece is forgotten.</p></article>
+          </div>
+        </section>
+
+        <section class="section annotated-section" id="why">
+          <span class="section-stamp">tile it in your mind</span>
+          <div class="why-grid">
+            <div class="formula-card"><p class="eyebrow">The one idea underneath</p><div class="big-formula">Area = length × width</div><p>We are counting equal rows of square units. Length tells us how many squares are in one row; width tells us how many rows there are.</p></div>
+            <div class="story-copy"><h3>Imagine laying tiles in a room.</h3><p>If a rectangular room is 6 metres long and 4 metres wide, each row has 6 square metres of tiles and there are 4 rows.</p><p><strong>6 × 4 = 24 m²</strong> of floor space. An irregular floor plan is still made of floor space — it just needs more than one rectangle to describe it.</p></div>
+          </div>
+        </section>
+
+        <section class="section annotated-section" id="steps">
+          <span class="section-stamp">same map, every time</span>
+          <div class="section-heading"><div><p class="eyebrow">A repeatable strategy</p><h2>Four small moves.</h2></div><p>When a worksheet shape looks unfamiliar, return to these four moves instead of guessing.</p></div>
+          <div class="steps">
+            <article class="step"><span class="step-number">1</span><h3>Spot</h3><p>Look for the straight edges and collect the measurements. Mark missing lengths by thinking about the whole side.</p></article>
+            <article class="step"><span class="step-number">2</span><h3>Split</h3><p>Draw a friendly line through the shape. Aim to make two or more complete rectangles.</p></article>
+            <article class="step"><span class="step-number">3</span><h3>Solve</h3><p>For each rectangle, use length × width. Write the unit beside every area.</p></article>
+            <article class="step"><span class="step-number">4</span><h3>Stitch</h3><p>Add the rectangle areas. Then check: does the total seem sensible for the size of the whole shape?</p></article>
+          </div>
+        </section>
+
+        <section class="section worked annotated-section" id="worked">
+          <span class="section-stamp">draw the split</span>
+          <div class="section-heading"><div><p class="eyebrow">Worked example</p><h2>Let’s walk through the L-shape.</h2></div><p>This is the same kind of shape shown on the exercise sheet. We will think aloud, one piece at a time.</p></div>
+          <div class="worked-grid">
+            <figure class="shape-board">
+              <svg viewBox="0 0 440 310" role="img" aria-labelledby="shape-title shape-desc">
+                <title id="shape-title">An L-shape split into two rectangles</title><desc id="shape-desc">The top rectangle is 3 metres wide and 4 metres high. The bottom rectangle is 5 metres wide and 3 metres high.</desc>
+                <path d="M90 35 H225 V125 H345 V255 H90 Z" fill="#d9e8e0" stroke="#32645f" stroke-width="3" stroke-linejoin="round" />
+                <path d="M90 125 H345 V255 H90 Z" fill="#f3d9d3" opacity=".85" />
+                <path d="M225 35 V125" stroke="#32645f" stroke-width="3" />
+                <path d="M90 125 H225" stroke="#d98f91" stroke-width="3" stroke-dasharray="7 6" />
+                <text x="140" y="83" fill="#32645f" font-size="22" font-family="Fraunces, serif">1</text><text x="178" y="180" fill="#a76164" font-size="22" font-family="Fraunces, serif">2</text>
+                <text x="142" y="25" fill="#32645f" font-size="15" font-family="DM Sans, sans-serif">3 m</text><text x="65" y="86" fill="#32645f" font-size="15" font-family="DM Sans, sans-serif">4 m</text>
+                <text x="186" y="282" fill="#a76164" font-size="15" font-family="DM Sans, sans-serif">5 m</text><text x="354" y="195" fill="#a76164" font-size="15" font-family="DM Sans, sans-serif">3 m</text>
+              </svg>
+              <figcaption>The dashed line is our gentle split. Both pieces are rectangles.</figcaption>
+            </figure>
+            <div class="calculation">
+              <div class="calc-line"><span class="calc-badge">1</span><span class="calc-label">Top rectangle<br />length × width</span><span class="calc-math">3 × 4 = 12 m²</span></div>
+              <div class="calc-line"><span class="calc-badge">2</span><span class="calc-label">Bottom rectangle<br />length × width</span><span class="calc-math">5 × 3 = 15 m²</span></div>
+              <div class="calc-total"><span>Stitch the pieces together</span><strong>12 m² + 15 m² = 27 m²</strong></div>
+              <div class="split-choice"><div><strong>What did we not do?</strong><p>We did not multiply every visible number together. Each multiplication belonged to one rectangle.</p></div><div><strong>How can we check?</strong><p>The whole shape is a little bigger than a 5 m × 5 m square, so 27 m² feels reasonable.</p></div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section annotated-section" id="units">
+          <span class="section-stamp">label it carefully</span>
+          <div class="section-heading"><div><p class="eyebrow">The labels matter</p><h2>Area needs square units.</h2></div><p>Units tell us what the answer is measuring. Keep them with your working so the meaning stays visible.</p></div>
+          <div class="units-grid">
+            <table class="unit-table"><thead><tr><th>If lengths are...</th><th>Area is written as...</th><th>Example</th></tr></thead><tbody><tr><td>millimetres (mm)</td><td>square millimetres (mm²)</td><td>48 mm²</td></tr><tr><td>centimetres (cm)</td><td>square centimetres (cm²)</td><td>62 cm²</td></tr><tr><td>metres (m)</td><td>square metres (m²)</td><td>27 m²</td></tr></tbody></table>
+            <aside class="check-card"><h3>Quick check</h3><p>If one side says cm and another says m, pause before calculating. Convert them to the same unit first.</p><div class="tick">“Same unit in, square unit out.”</div></aside>
+          </div>
+        </section>
+
+        <section class="section practice annotated-section" id="practice">
+          <span class="section-stamp">pencil time</span>
+          <div class="section-heading"><div><p class="eyebrow">Now, have a go</p><h2>Use the map, not memory.</h2></div><p>Try each one on paper first. Then open the gentle hint to compare your thinking.</p></div>
+          <p class="practice-intro">A complete solution should show the split, the small rectangle areas, the addition, and the square unit.</p>
+          <div class="practice-list">
+            <article class="practice-item"><div class="practice-question"><p>1. A floor is split into rectangles of 6 m × 5 m and 4 m × 2 m. What is the total area?</p><button class="reveal-button" type="button" aria-expanded="false">See the thinking</button></div><div class="answer"><strong>Try:</strong> 6 × 5 = 30 m², then 4 × 2 = 8 m². Stitch them: <strong>30 + 8 = 38 m²</strong>.</div></article>
+            <article class="practice-item"><div class="practice-question"><p>2. A 12 mm × 6 mm rectangle has a 4 mm × 3 mm notch taken away. What remains?</p><button class="reveal-button" type="button" aria-expanded="false">See the thinking</button></div><div class="answer"><strong>Try:</strong> Find the whole first: 12 × 6 = 72 mm². Find the missing notch: 4 × 3 = 12 mm². Take it away: <strong>72 − 12 = 60 mm²</strong>.</div></article>
+            <article class="practice-item"><div class="practice-question"><p>3. Draw your own irregular shape using two rectangles. Give it friendly measurements and find its area.</p><button class="reveal-button" type="button" aria-expanded="false">See a prompt</button></div><div class="answer"><strong>Draw:</strong> Make an L-shape. Label every side you know. If a side is missing, use the whole side to work it out. Then choose a split and explain why it works.</div></article>
+          </div>
+          <div class="reflection"><div><p class="eyebrow">Say it back in your own words</p><h2>What does the shape look like <em>in your mind?</em></h2><p>Try finishing this sentence: “To find an irregular area, I can…” If you can explain the steps, you understand more than a single answer.</p></div><div class="reflection-note"><span>✳</span>split it kindly,<br />then count the space</div></div>
+        </section>
+      </main>
+      <footer><span>Made for Mayo's curious mind.</span><a href="index.html">Return to the Maths Notebook ↗</a></footer>
+    </div>
+    <script>
+      // Style reminder: a reveal should feel like opening a notebook flap — immediate, gentle, and optional.
+      document.querySelectorAll('.reveal-button').forEach((button) => {
+        button.addEventListener('click', () => {
+          const answer = button.closest('.practice-item').querySelector('.answer');
+          const isOpen = answer.classList.toggle('is-open');
+          button.setAttribute('aria-expanded', String(isOpen));
+          button.textContent = isOpen ? 'Hide the thinking' : 'See the thinking';
+        });
+      });
+    </script>
+  </body>
+</html>
