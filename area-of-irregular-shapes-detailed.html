@@ -44,6 +44,15 @@
   .hand{font-family:'Kalam', cursive;}
   .page{max-width:900px; margin:0 auto; padding:0 24px 80px;}
 
+  /* Mayo's notebook bridge: keep the detailed reference page connected to the calmer quick-start lesson. */
+  .notebook-bar{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:16px 0 8px; border-bottom:1px solid var(--line);}
+  .notebook-lockup{display:inline-flex; align-items:center; gap:9px; color:var(--teal-deep); font-family:'Baloo 2', sans-serif; font-size:16px; font-weight:700; line-height:1;}
+  .notebook-lockup img{width:34px; height:34px; object-fit:contain; border:1px solid rgba(15,110,86,.18); border-radius:10px; background:#fff;}
+  .notebook-links{display:flex; flex-wrap:wrap; justify-content:flex-end; gap:7px;}
+  .notebook-links a{color:var(--teal-deep); border:1px solid var(--line); border-radius:8px; padding:5px 9px; font-family:'Nunito', sans-serif; font-size:11px; font-weight:700; text-decoration:none; background:rgba(255,255,255,.52);}
+  .notebook-links a:hover,.notebook-links a:focus-visible{background:var(--teal-bg); border-color:var(--teal);}
+  @media (max-width:640px){.notebook-bar{align-items:flex-start; flex-direction:column;}.notebook-links{justify-content:flex-start;}}
+  
   /* ---- Header ---- */
   header.hero{
     padding:56px 24px 40px;
