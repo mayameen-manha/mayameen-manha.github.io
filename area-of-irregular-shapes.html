@@ -25,20 +25,16 @@
       button { font: inherit; }
       a:focus-visible, button:focus-visible { outline: 3px solid rgba(79,130,123,.45); outline-offset: 4px; }
       .page { max-width: 1220px; margin: 0 auto; padding: 0 34px; }
-      .lesson-header { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: clamp(20px, 4vw, 56px); padding: 20px 0 22px; border-bottom: 1px solid var(--line); }
-      .header-lockup { display: inline-flex; align-items: center; gap: 10px; min-width: max-content; color: var(--teal-dark); }
-      .header-lockup > span:last-child { display: grid; line-height: 1; }
-      .header-lockup strong { font-family: "Fraunces", serif; font-size: 18px; letter-spacing: -.04em; }
-      .header-lockup small { margin-top: 5px; color: var(--muted); font-size: 8px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-      .header-mark { display: grid; width: 45px; height: 45px; place-items: center; border: 1px solid rgba(79,130,123,.2); border-radius: 14px 10px 13px 11px; background: var(--white); box-shadow: 3px 4px 0 rgba(79,130,123,.08); transform: rotate(-4deg); transition: transform .18s var(--ease); }
-      .header-lockup:hover .header-mark { transform: rotate(2deg) translateY(-2px); }
+      /* Mayo's notebook bridge: keep the detailed reference page connected to the calmer quick-start lesson. */
+      .notebook-bar{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:16px 0 8px; border-bottom:1px solid var(--line);}
+      .notebook-lockup{display:inline-flex; align-items:center; gap:9px; color:var(--teal-deep); font-family:'Baloo 2', sans-serif; font-size:16px; font-weight:700; line-height:1;}
+      .notebook-lockup img{width:34px; height:34px; object-fit:contain; border:1px solid rgba(15,110,86,.18); border-radius:10px; background:#fff;}
+      .notebook-links{display:flex; flex-wrap:wrap; justify-content:flex-end; gap:7px;}
+      .notebook-links a{color:var(--teal-deep); border:1px solid var(--line); border-radius:8px; padding:5px 9px; font-family:'Nunito', sans-serif; font-size:11px; font-weight:700; text-decoration:none; background:rgba(255,255,255,.52);}
+      .notebook-links a:hover,.notebook-links a:focus-visible{background:var(--teal-bg); border-color:var(--teal);}
+      @media (max-width:640px){.notebook-bar{align-items:flex-start; flex-direction:column;}.notebook-links{justify-content:flex-start;}}
+      
       .header-mark img { width: 35px; height: 35px; object-fit: contain; }
-      .lesson-brand { justify-self: end; }
-      .back-link { color: var(--teal-dark); font-size: 12px; font-weight: 700; }
-      .back-link span { display: inline-block; margin-right: 8px; font-size: 17px; transition: transform .18s var(--ease); }
-      .back-link:hover span { transform: translateX(-3px); }
-      .lesson-brand { color: var(--muted); font-family: "Fraunces", serif; font-size: 12px; font-style: italic; }
-      .lesson-brand strong { display: inline-grid; width: 25px; height: 25px; margin-left: 7px; place-items: center; border: 1px solid var(--teal); border-radius: 50%; color: var(--teal-dark); font-family: "DM Sans", sans-serif; font-size: 9px; font-style: normal; }
       .hero { display: grid; grid-template-columns: minmax(0, 1.06fr) minmax(310px, .94fr); gap: clamp(38px, 8vw, 130px); align-items: center; padding: 88px 8% 102px; }
       .eyebrow { margin: 0 0 15px; color: var(--teal); font-size: 10px; font-weight: 700; letter-spacing: .14em; line-height: 1.2; text-transform: uppercase; }
       h1, h2, h3 { margin: 0; font-family: "Fraunces", serif; font-weight: 600; letter-spacing: -.055em; line-height: 1.02; }
@@ -130,17 +126,47 @@
       .reflection-note span { display: block; margin-bottom: 8px; color: var(--rose); font-family: "DM Sans", sans-serif; font-size: 24px; font-style: normal; }
       footer { display: flex; justify-content: space-between; gap: 20px; padding: 22px 8% 35px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; }
       @media (max-width: 900px) { .hero, .why-grid, .worked-grid, .units-grid { grid-template-columns: 1fr; } .hero { padding-top: 65px; } .hero-note { max-width: 580px; justify-self: center; } .concept-grid { grid-template-columns: repeat(2, 1fr); } .steps { grid-template-columns: repeat(2, 1fr); gap: 20px; } .step { border-top-width: 1px; } .step:not(:last-child)::after { display: none; } }
-      @media (max-width: 620px) { .page { padding: 0 20px; } .lesson-header { grid-template-columns: auto 1fr; padding-top: 15px; } .lesson-brand { display: none; } .back-link { justify-self: end; } .header-lockup strong { font-size: 16px; } .header-mark { width: 39px; height: 39px; } .header-mark img { width: 30px; height: 30px; } .hero, .section { padding-right: 0; padding-left: 0; } .section-stamp { left: 0; font-size: 11px; } .annotated-section::after { right: 0; } .hero { padding-top: 55px; padding-bottom: 72px; } h1 { font-size: 54px; } .lesson-nav { margin-right: 0; margin-left: 0; } .section-heading { display: block; } .section-heading > p { margin-top: 17px; } .concept-grid, .steps { grid-template-columns: 1fr; } .concept { min-height: 150px; } .concept h3 { margin-top: 22px; } .shape-board { padding: 12px; } .calc-line { grid-template-columns: 29px 1fr; } .calc-math { grid-column: 2; } .split-choice, .reflection { grid-template-columns: 1fr; } .reflection { padding: 28px 24px; } .reflection-note { justify-self: start; } .practice-question { align-items: flex-start; flex-direction: column; } footer { display: grid; padding-right: 0; padding-left: 0; } }
+      @media (max-width: 620px) { 
+        .page { padding: 0 20px; } 
+        .header-lockup strong { font-size: 16px; } 
+        .header-mark { width: 39px; height: 39px; } 
+        .header-mark img { width: 30px; height: 30px; } 
+        .hero, .section { padding-right: 0; padding-left: 0; } 
+        .section-stamp { left: 0; font-size: 11px; } 
+        .annotated-section::after { right: 0; } 
+        .hero { padding-top: 55px; padding-bottom: 72px; } 
+        h1 { font-size: 54px; } 
+        .lesson-nav { margin-right: 0; margin-left: 0; } 
+        .section-heading { display: block; } 
+        .section-heading > p { margin-top: 17px; } 
+        .concept-grid, .steps { grid-template-columns: 1fr; } 
+        .concept { min-height: 150px; } 
+        .concept h3 { margin-top: 22px; } 
+        .shape-board { padding: 12px; } 
+        .calc-line { grid-template-columns: 29px 1fr; } 
+        .calc-math { grid-column: 2; } 
+        .split-choice, .reflection { grid-template-columns: 1fr; } 
+        .reflection { padding: 28px 24px; } 
+        .reflection-note { justify-self: start; } 
+        .practice-question { align-items: flex-start; flex-direction: column; } footer { display: grid; padding-right: 0; padding-left: 0; } }
       @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }
     </style>
   </head>
   <body>
     <div class="page">
-      <header class="lesson-header">
+      <!-- <header class="lesson-header">
         <div class="header-lockup"><span class="header-mark"><img src="/manus-storage/mayo-notebook-mark_d1982af1.png" alt="" /></span><span><strong>Mayo's</strong><small>maths notebook</small></span></div>
         <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Back to the notebook</a>
         <div class="lesson-brand">Maths · learning page <strong>01</strong></div>
-      </header>
+      </header> -->
+
+      <div class="notebook-bar" aria-label="Mayo's Maths Notebook navigation">
+        <a class="notebook-lockup" href="index.html"><img src="assets/mayo-notebook-mark.svg" alt="" /> <span>Mayo's notebook</span></a>
+        <nav class="notebook-links" aria-label="Learning page options">
+          <a href="area-of-irregular-shapes.html">Quick visual lesson</a>
+          <a href="index.html">Notebook home</a>
+        </nav>
+  </div>
 
       <main>
         <section class="hero" id="start">
