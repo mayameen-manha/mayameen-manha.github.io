@@ -358,6 +358,11 @@ input{width:100%;font:700 18px Nunito;padding:12px 14px;border:2px dashed #b8aed
   const show = id => { document.querySelectorAll('.scene').forEach(s => s.classList.toggle('on', s.id === id)); document.querySelectorAll('.rise').forEach(b => { b.style.transition = 'opacity .5s'; b.style.opacity = 0; setTimeout(() => b.remove(), 600); }); };
   const el = (tag, attrs, parent) => { const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); parent && parent.appendChild(n); return n; };
 
+  /* Safari / iPhone (incl. Messenger): its pencil-wobble filter can hide whole drawings, so skip it there */
+  { const ua = navigator.userAgent;
+    const webkit = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) || (/Safari/.test(ua) && !/Chrome|Chromium|Edg|OPR|Firefox|Android/.test(ua));
+    if (webkit) document.querySelectorAll('[filter]').forEach(n => n.removeAttribute('filter')); }
+
   /* --- scenery details --- */
   const rails = $('rails'); for (let x = 112; x < 320; x += 16) el('line', {x1:x, y1:350, x2:x, y2:398}, rails);
   const bg = $('bougain'); const pinks = ['#d6336c','#e8579a','#c2255c','#f06595'];
