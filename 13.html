@@ -77,7 +77,7 @@ input{width:100%;font:700 18px Nunito;padding:12px 14px;border:2px dashed #b8aed
 #fx{position:fixed;inset:0;pointer-events:none;z-index:50}
 /* message */
 #msg{overflow-y:auto;justify-content:flex-start}
-.letter{position:relative;z-index:2;width:min(94vw,460px);background:#fffaf0;border-radius:6px;padding:28px 24px 24px;box-shadow:0 16px 36px rgba(60,40,20,.22);text-align:left;margin:4vh 0 20px;transform:rotate(.6deg)}
+.letter{position:relative;z-index:2;width:min(94vw,460px);background:#fffaf0;border-radius:6px;padding:28px 24px 24px;box-shadow:0 16px 36px rgba(60,40,20,.22);text-align:left;margin:4vh 0 20px}
 .letter h2{font-size:clamp(40px,11vw,54px);margin:0 0 12px;text-align:center}
 .letter h2 em{color:var(--red);font-style:normal}
 .letter p{font-family:Caveat;font-size:26px;line-height:1.25;margin:0 0 12px}
@@ -149,7 +149,7 @@ input{width:100%;font:700 18px Nunito;padding:12px 14px;border:2px dashed #b8aed
 .spark-ring{position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,214,120,.45),rgba(255,214,120,0));animation:glow 2.2s ease-in-out infinite alternate}
 .on .letter>*{animation:write .9s both ease-out}
 .on .letter>*:nth-child(1){animation-delay:.3s}.on .letter>*:nth-child(2){animation-delay:1s}.on .letter>*:nth-child(3){animation-delay:1.9s}.on .letter>*:nth-child(4){animation-delay:2.8s}.on .letter>*:nth-child(5){animation-delay:3.6s}
-@keyframes write{from{opacity:0;transform:translateY(10px);filter:blur(3px)}}
+@keyframes write{from{opacity:0;transform:translateY(10px)}}
 .on .level{animation:write .9s 4.4s both}.on #msg .row,#msg.on .row{animation:write .9s 4.8s both}
 .heart path{stroke-dasharray:120;stroke-dashoffset:120}
 .on .heart path{animation:drawH 1.4s 4s forwards ease-out}
